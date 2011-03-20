@@ -20,7 +20,7 @@ Session := Object clone do(
 
     html := Canvas clone
     html callbacks = callbacks
-    root renderOn(html)
+    html render(root)
     response setBody(html result)
   )
 )

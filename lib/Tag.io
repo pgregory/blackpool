@@ -17,7 +17,7 @@ Tag := Object clone do(
     )
     canvas result appendSeq(">")
     call message arguments foreach(arg,
-      arg doInContext(call sender) ?renderOn(canvas)
+      arg doInContext(call sender) 
     )
     canvas result appendSeq("</", tag, ">")
     // Return nil, so that it's not possible to chain after the 'with' call

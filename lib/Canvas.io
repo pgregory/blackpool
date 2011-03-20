@@ -6,27 +6,6 @@ Canvas := Object clone do(
     callbacks ::= nil
   )
 
-  elementWith := block(
-    canvas := call target
-    rest := List clone
-    canvas result appendSeq("<" .. call message name )
-    call message arguments foreach(arg, 
-      if( arg isSingular and arg name == "updateSlot"
-        , name := arg argAt(0) cachedResult
-          value := call sender doMessage(arg argAt(1))
-          canvas result appendSeq(" ", name, "=\"", value, "\"")
-        , rest append(arg)
-        )
-    )
-    canvas result appendSeq(">")
-    
-    rest foreach(r,
-      r doInContext(call sender) ?renderOn(canvas)
-    )
-    canvas result appendSeq("</" .. call message name .. ">")
-    canvas
-  )
-
   "h1 p div tr td table form label select option" split foreach(tag,
     setSlot(tag, 
       method(
@@ -65,5 +44,8 @@ Canvas := Object clone do(
     InputDateTag clone
   )
 
+  render := method(component,
+    component renderOn(self)
+  )
 )
 

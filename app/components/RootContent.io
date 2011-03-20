@@ -57,9 +57,9 @@ RootContent := Object clone do(
 
   renderOn := method(html,
     html h1 with(html text("Todo-List"))
-    html div with(menuComponent)
-    html div with(listComponent)
-    html div with(taskEditor)
+    html div with(html render(menuComponent))
+    html div with(html render(listComponent))
+    html div with(html render(taskEditor))
     html text(debugMsg)
   )
 )
