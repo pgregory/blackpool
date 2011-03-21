@@ -1,4 +1,4 @@
-MyCounter := Object clone do(
+Counter := Object clone do(
   init := method(
     count ::= 0
   )
