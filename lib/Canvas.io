@@ -6,7 +6,8 @@ Canvas := Object clone do(
     callbacks ::= nil
   )
 
-  "h1 p div tr td table form label select option" split foreach(tag,
+  elements := """h1 h2 h3 h4 h5 h6 a abbr area b blockquote body br canvas caption cite code col dd del div dt dl em embed footer head header i html hr label nav p script sup summery textarea td tbody table tfoot th thead title time tr u ul ol li"""
+  elements split foreach(tag,
     setSlot(tag, 
       method(
         Tag clone setTag(call message name)
