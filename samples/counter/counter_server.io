@@ -1,6 +1,6 @@
-Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("lib"))
-Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("app/models"))
-Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("app/components"))
+Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("../../lib"))
+Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("models"))
+Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("components"))
 
 server := HttpServer clone do(
   setPort(8090)
@@ -13,8 +13,7 @@ server := HttpServer clone do(
     if (cookie != nil, session = sessions find(cookie))
     if (session == nil,
       session = Session clone do(
-        root ::= MyCounter clone
-        writeln("Cloned!")
+        root ::= Counter clone
       )
       response setCookie("ioweb", sessions register(session))
     )

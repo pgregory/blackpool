@@ -1,6 +1,6 @@
-Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("lib"))
-Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("app/models"))
-Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("app/components"))
+Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("../../lib"))
+Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("models"))
+Importer addSearchPath(Directory currentWorkingDirectory asMutable appendPathSeq("components"))
 
 server := HttpServer clone do(
   setPort(8090)
