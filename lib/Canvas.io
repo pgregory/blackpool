@@ -41,6 +41,10 @@ Canvas := Object clone do(
     InputTextTag clone
   )
 
+  inputTextArea := method(
+    InputTextAreaTag clone
+  )
+
   inputDate := method(
     InputDateTag clone
   )

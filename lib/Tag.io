@@ -40,7 +40,15 @@ InputTextTag := InputTag clone do(
     attributes append(list("type", "text"))
     tag = "input"
   )
-) 
+)
+
+InputTextAreaTag := InputTag clone do(
+  init := method(
+    super(init)
+    canvas = call sender
+    tag = "textarea"
+  )
+)
 
 InputDateTag := InputTag clone do(
   init := method(
